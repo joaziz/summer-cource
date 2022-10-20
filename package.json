@@ -1,0 +1,15 @@
+{
+  "name": "summer-cource",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js ahmed Tamer Weal Waled Gamal Saied"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mathjs": "^11.3.0"
+  }
+}
