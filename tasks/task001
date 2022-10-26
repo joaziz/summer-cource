@@ -1,0 +1,5 @@
+we need to delete the user from the data.json file
+by sent it`s id so we could handel it.
+
+* we should check if the id is exist first
+* deleting user should impact the data in data.json file

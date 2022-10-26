@@ -1,12 +1,12 @@
 const {readFile, writeFile} = require("fs").promises;
 
-function read(filnae) {
-    return readFile(filnae, "utf-8")
+function read(fname) {
+    return readFile(fname, "utf-8")
 }
 
 
-function write(filname, content) {
-    return writeFile(filname, content)
+function write(fname, content) {
+    return writeFile(fname, content)
 }
 
 module.exports = {
