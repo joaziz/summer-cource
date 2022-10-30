@@ -1,0 +1,11 @@
+
+
+
+Admin
+    - create new user   http://localhost:3000/admin/users POST
+    - list all users    http://localhost:3000/admin/users Get
+    - view one users    http://localhost:3000/admin/users/:id get
+    - delete user       http://localhost:3000/admin/users/:id delete
+HR
+    - list all users    http://localhost:3000/hr/users Get
+    - view one users    http://localhost:3000/hr/users/:id Get
