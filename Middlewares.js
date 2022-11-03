@@ -1,3 +1,4 @@
+const {ParsToken} = require("./AuthService");
 let counts = {}
 
 
@@ -20,16 +21,22 @@ function checkUserLimit(req, res, next) {
 
 }
 
-function checkUserIsAdmin(req, res, next) {
-    let token = req.headers["token"];
 
-    if (token == "123123")
-        return next();
+async function checkUserIsAdmin(req, res, next) {
+    let token = req.headers["authorization"];
+
+    if (token) {
+        let TokeParts = await ParsToken(token)
+        if (TokeParts.isValid) {
+            req.user = TokeParts.user
+            return next();
+        }
+    }
 
     return res.status(401).json({message: "unauthorized"});
 
 }
 
 module.exports = {
-    checkUserLimit,checkUserIsAdmin
+    checkUserLimit, checkUserIsAdmin
 }

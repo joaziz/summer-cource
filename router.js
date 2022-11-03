@@ -7,22 +7,28 @@ const {
 
 const express = require("express");
 const {checkUserLimit, checkUserIsAdmin} = require("./Middlewares");
+const {LoginController, SingUpController} = require("./AuthController");
 
 let HRApp = express();
 let AdminApp = express();
 
 
 function LoadAdminRoutes(MainApp) {
-    // list users
-    AdminApp.get("/users", getAllUsersController);
-// view one user
-    AdminApp.get("/users/:id", ViewUserController);
-// create new user
-    AdminApp.post("/users", CreateNewUserController);
-// delete user
-    AdminApp.delete("/users/:id", DeleteUserController);
 
-    MainApp.use("/admin", checkUserIsAdmin,AdminApp)
+
+    AdminApp.post("/auth/login", LoginController);
+    AdminApp.post("/auth/sing-up", SingUpController);
+
+    let authRoutes = express();
+
+    authRoutes.use(checkUserIsAdmin);  // list users
+    authRoutes.get("/users", getAllUsersController);
+    authRoutes.get("/users/:id", ViewUserController);// view one user
+    authRoutes.post("/users", CreateNewUserController);// create new user
+    authRoutes.delete("/users/:id", DeleteUserController);// delete user
+
+    AdminApp.use(authRoutes)
+    MainApp.use("/admin", AdminApp)
 
 }
 

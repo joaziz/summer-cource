@@ -1,1 +1,16 @@
-[{"name":"user2","Age":"40","Is_Admin":true,"id":1002},{"name":"user2","Age":"40","Is_Admin":true,"id":1003},{"name":"user2","Age":"40","Is_Admin":true,"id":1004},{"name":"user2","Age":"40","Is_Admin":true,"id":1005},{"name":"user2","Age":"40","Is_Admin":true,"id":1006}]
+[
+  {
+    "username": "user3",
+    "password": "$2b$10$JqlqHiDHG7OX4bjJAfjtv.IpRyXTNFtAYmEf8KEcYFIpu.lHopbRO",
+    "IsAdmin": true,
+    "IsActive": true,
+    "id": 1001
+  },
+  {
+    "username": "user4",
+    "password": "$2b$10$JqlqHiDHG7OX4bjJAfjtv.IpRyXTNFtAYmEf8KEcYFIpu.lHopbRO",
+    "IsAdmin": true,
+    "IsActive": true,
+    "id": 1002
+  }
+]
